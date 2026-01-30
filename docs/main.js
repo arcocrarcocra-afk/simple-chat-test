@@ -57,9 +57,22 @@ function startChat() {
     log.innerHTML = "";
     snap.forEach(doc => {
       const d = doc.data();
-      const div = document.createElement("div");
-      div.textContent = `${d.name}: ${d.text}`;
-      log.appendChild(div);
+      const wrap = document.createElement("div");
+wrap.className = d.name === username ? "msg me" : "msg other";
+
+const name = document.createElement("div");
+name.className = "name";
+name.textContent = d.name;
+
+const text = document.createElement("div");
+text.className = "bubble";
+text.textContent = d.text;
+
+wrap.appendChild(name);
+wrap.appendChild(text);
+log.appendChild(wrap);
+
+log.scrollTop = log.scrollHeight;
     });
   });
 }
