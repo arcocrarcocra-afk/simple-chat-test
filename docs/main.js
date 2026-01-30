@@ -1,3 +1,5 @@
+console.log("main.js 読み込まれた");
+
 // Firebase SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
