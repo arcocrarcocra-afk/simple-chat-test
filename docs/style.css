@@ -12,7 +12,7 @@ html, body {
 
 /* ===== アプリ全体 ===== */
 .app {
-  height: 100dvh; /* ← スマホvh対策 */
+  height: 60dvh; /* ← スマホvh対策 */
   display: flex;
   justify-content: center;
 }
