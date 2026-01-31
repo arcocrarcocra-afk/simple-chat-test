@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <title>試作チャット</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <div class="app">
-  <div id="chatArea" class="chat">
-    <div id="log" class="log"></div>
 
-    <div class="inputArea">
-      <input id="msgInput" placeholder="メッセージ" />
-      <button id="send">送信</button>
+  <div class="app">
+    <div id="chatArea" class="chat">
+      <div id="log" class="log"></div>
+
+      <div class="inputArea">
+        <input id="msgInput" placeholder="メッセージ" />
+        <button id="send">送信</button>
+      </div>
     </div>
   </div>
-  </div>
-  
+
+  <!-- ★これが無いと全部動かへん -->
+  <script type="module" src="main.js"></script>
+
 </body>
 </html>
