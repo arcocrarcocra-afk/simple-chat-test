@@ -36,7 +36,7 @@ html, body {
 
 /* ===== メッセージ ===== */
 .msg {
-  margin-bottom: 120px;
+  margin-bottom: 12px;
   display: flex;
   flex-direction: column;
   max-width: 80%;
