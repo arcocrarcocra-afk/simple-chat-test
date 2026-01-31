@@ -30,6 +30,15 @@ const chatArea = document.getElementById("chatArea");
 const log = document.getElementById("log");
 const msgInput = document.getElementById("msgInput");
 
+// ===== 時刻フォーマット関数（★追加・修正点）=====
+function formatTime(ts) {
+  if (!ts) return "";
+  const date = ts.toDate(); // Firestore Timestamp → Date
+  const h = date.getHours().toString().padStart(2, "0");
+  const m = date.getMinutes().toString().padStart(2, "0");
+  return `${h}:${m}`;
+}
+
 // ===== ユーザー名自動生成 =====
 let username = localStorage.getItem("username");
 
@@ -50,30 +59,30 @@ function startChat() {
   onSnapshot(q, (snap) => {
     log.innerHTML = "";
 
-snap.forEach(doc => {
-  const d = doc.data();
+    snap.forEach(doc => {
+      const d = doc.data();
 
-  const wrap = document.createElement("div");
-  wrap.className = d.name === username ? "msg me" : "msg other";
+      const wrap = document.createElement("div");
+      wrap.className = d.name === username ? "msg me" : "msg other";
 
-  const name = document.createElement("div");
-  name.className = "name";
-  name.textContent = d.name;
+      const name = document.createElement("div");
+      name.className = "name";
+      name.textContent = d.name;
 
-  const text = document.createElement("div");
-  text.className = "bubble";
-  text.textContent = d.text;
+      const text = document.createElement("div");
+      text.className = "bubble";
+      text.textContent = d.text;
 
-  const time = document.createElement("div");
-  time.className = "time";
-  time.textContent = formatTime(d.time);
+      const time = document.createElement("div");
+      time.className = "time";
+      time.textContent = formatTime(d.time);
 
-  wrap.appendChild(name);
-  wrap.appendChild(text);
-  wrap.appendChild(time);
+      wrap.appendChild(name);
+      wrap.appendChild(text);
+      wrap.appendChild(time);
 
-  log.appendChild(wrap);
-});
+      log.appendChild(wrap);
+    });
 
     log.scrollTop = log.scrollHeight;
   });
