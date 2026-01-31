@@ -1,128 +1,117 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-  background: #f2f2f2;
-}
-
-.app {
-  max-width: 480px;
-  margin: auto;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  width: 100%;
+* {
   box-sizing: border-box;
 }
 
-.card h2 {
-  margin-top: 0;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f5f5f5;
 }
 
+/* ===== アプリ全体 ===== */
+.app {
+  height: 100dvh; /* ← スマホvh対策 */
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== チャット領域 ===== */
 .chat {
-  background: white;
   width: 100%;
+  max-width: 480px; /* スマホ最大幅 */
   height: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.inputArea {
-  display: flex;
-  padding: 10px;
-  border-top: 1px solid #ddd;
   background: #fff;
 }
 
-.inputArea input {
-  flex: 1;
-  padding: 8px;
-  font-size: 14px;
-}
-
-.inputArea button {
-  margin-left: 6px;
-}
-
-
+/* ===== ログ ===== */
 .log {
   flex: 1;
-  padding: 10px;
   overflow-y: auto;
-  background: #f7f7f7;
+  padding: 12px;
 }
 
-.log div {
-  
-}
-
-/* こっちに寄せる */
-.bubble {
-  padding: 8px 12px;
-  border-radius: 16px;
-  font-size: 14px;
-  line-height: 1.4;
-  word-break: break-word;
-}
-
+/* ===== メッセージ ===== */
 .msg {
+  margin-bottom: 12px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 14px;
   max-width: 80%;
 }
 
 .msg.me {
-  align-self: flex-end;
-  text-align: right;
+  margin-left: auto;
+  align-items: flex-end;
 }
 
 .msg.other {
-  align-self: flex-start;
+  margin-right: auto;
+  align-items: flex-start;
 }
 
 .name {
-  font-size: 11px;
+  font-size: 12px;
   color: #666;
   margin-bottom: 2px;
 }
 
 .bubble {
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.4;
   word-break: break-word;
 }
 
 .msg.me .bubble {
-  background: #8de055; /* LINE緑 */
-  border-bottom-right-radius: 4px;
+  background: #dcf8c6;
 }
 
 .msg.other .bubble {
-  background: #ffffff;
-  border: 1px solid #ddd;
-  border-bottom-left-radius: 4px;
+  background: #eee;
 }
-
 
 .time {
   font-size: 10px;
-  color: #888;
+  color: #999;
   margin-top: 2px;
 }
 
-.msg.me .time {
-  text-align: right;
+/* ===== 入力欄（下固定） ===== */
+.inputArea {
+  display: flex;
+  padding: 8px;
+  gap: 8px;
+  border-top: 1px solid #ddd;
+  background: #fff;
 }
 
-.msg.other .time {
-  text-align: left;
+#msgInput {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 16px; /* ← iOSズーム防止 */
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+#send {
+  padding: 0 16px;
+  border-radius: 20px;
+  border: none;
+  background: #007aff;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* ===== PC時ちょい調整 ===== */
+@media (min-width: 600px) {
+  .chat {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 12px 0;
+  }
 }
