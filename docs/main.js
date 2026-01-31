@@ -50,24 +50,30 @@ function startChat() {
   onSnapshot(q, (snap) => {
     log.innerHTML = "";
 
-    snap.forEach(doc => {
-      const d = doc.data();
+snap.forEach(doc => {
+  const d = doc.data();
 
-      const wrap = document.createElement("div");
-      wrap.className = d.name === username ? "msg me" : "msg other";
+  const wrap = document.createElement("div");
+  wrap.className = d.name === username ? "msg me" : "msg other";
 
-      const name = document.createElement("div");
-      name.className = "name";
-      name.textContent = d.name;
+  const name = document.createElement("div");
+  name.className = "name";
+  name.textContent = d.name;
 
-      const text = document.createElement("div");
-      text.className = "bubble";
-      text.textContent = d.text;
+  const text = document.createElement("div");
+  text.className = "bubble";
+  text.textContent = d.text;
 
-      wrap.appendChild(name);
-      wrap.appendChild(text);
-      log.appendChild(wrap);
-    });
+  const time = document.createElement("div");
+  time.className = "time";
+  time.textContent = formatTime(d.time);
+
+  wrap.appendChild(name);
+  wrap.appendChild(text);
+  wrap.appendChild(time);
+
+  log.appendChild(wrap);
+});
 
     log.scrollTop = log.scrollHeight;
   });
