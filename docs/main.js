@@ -40,8 +40,19 @@ if (username) {
 }
 
 document.getElementById("setName").onclick = () => {
-  username = nameInput.value.trim();
-  if (!username) return;
+  let input = nameInput.value.trim();
+
+  if (!input) {
+    // 名無しを自動生成
+    input = "名無し-" + Math.floor(Math.random() * 10000);
+  }
+
+  username = input;
+  localStorage.setItem("username", username);
+
+  startChat();
+};
+  
   localStorage.setItem("username", username);
   startChat();
 };
