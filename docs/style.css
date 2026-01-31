@@ -20,7 +20,7 @@ html, body {
 /* ===== チャット領域 ===== */
 .chat {
   width: 100%;
-  max-width: 480px; /* スマホ最大幅 */
+  max-width: 1000px; /* スマホ最大幅 */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@ html, body {
 .bubble {
   padding: 10px 14px;
   border-radius: 16px;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 1.4;
   word-break: break-word;
 }
