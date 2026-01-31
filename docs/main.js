@@ -1,3 +1,13 @@
+let username = localStorage.getItem("username");
+
+if (!username) {
+  username = "名無し-" + Math.floor(Math.random() * 10000);
+  localStorage.setItem("username", username);
+}
+
+startChat();
+
+
 console.log("main.js 読み込まれた");
 
 // Firebase SDK
@@ -26,11 +36,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const nameArea = document.getElementById("nameArea");
+
 const chatArea = document.getElementById("chatArea");
 const log = document.getElementById("log");
 
-const nameInput = document.getElementById("nameInput");
+
 const msgInput = document.getElementById("msgInput");
 
 let username = localStorage.getItem("username");
