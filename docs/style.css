@@ -1,6 +1,5 @@
 body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   background: #f2f2f2;
 }
 
@@ -33,24 +32,11 @@ body {
   flex-direction: column;
 }
 
-.log {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-}
-
-.log div {
-  margin-bottom: 8px;
-  padding: 6px 10px;
-  background: #e6e6e6;
-  border-radius: 8px;
-  font-size: 14px;
-}
-
 .inputArea {
   display: flex;
   padding: 10px;
   border-top: 1px solid #ddd;
+  background: #fff;
 }
 
 .inputArea input {
@@ -64,10 +50,26 @@ body {
 }
 
 
+.log {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #f7f7f7;
+}
+
+.log div {
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  background: #e6e6e6;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+
 .msg {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   max-width: 80%;
 }
 
@@ -103,4 +105,19 @@ body {
   background: #ffffff;
   border: 1px solid #ddd;
   border-bottom-left-radius: 4px;
+}
+
+
+.time {
+  font-size: 10px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.msg.me .time {
+  text-align: right;
+}
+
+.msg.other .time {
+  text-align: left;
 }
