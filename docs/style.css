@@ -24,7 +24,7 @@ html, body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: 	#008080;
 }
 
 /* ===== ログ ===== */
@@ -73,7 +73,7 @@ html, body {
 }
 
 .msg.me .bubble {
-  background: #dcf8c6;
+  background: #000066;
 }
 
 .msg.other .bubble {
@@ -108,8 +108,8 @@ html, body {
   padding: 0 16px;
   border-radius: 20px;
   border: none;
-  background: #007aff;
-  color: #fff;
+  background: #aaaaaa;
+  color: #aaaaaa;
   font-size: 30px;
 }
 
