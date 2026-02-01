@@ -73,7 +73,7 @@ html, body {
 }
 
 .msg.me .bubble {
-  background: #000066;
+  background: #99ffff;
 }
 
 .msg.other .bubble {
@@ -109,7 +109,7 @@ html, body {
   border-radius: 20px;
   border: none;
   background: #aaaaaa;
-  color: #aaaaaa;
+  color: ##000080;
   font-size: 30px;
 }
 
